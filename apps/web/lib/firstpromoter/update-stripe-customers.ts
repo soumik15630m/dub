@@ -116,7 +116,7 @@ async function searchStripeAndUpdateCustomer({
   } as const;
 
   try {
-    const stripeCustomers = await stripe.customers.search(
+    const stripeCustomers = await stripe.customers.search.all(
       {
         query: `email:'${customer.email}'`,
         expand: ["data.subscriptions"],
